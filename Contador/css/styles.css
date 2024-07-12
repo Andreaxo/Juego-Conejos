@@ -1,0 +1,12 @@
+body{
+    counter-reset: lenteja; /*Sirve para contar, se le declara una variable */
+}
+
+input:checked{
+    counter-increment: lenteja; /* Incrementar en 1 la variable creada */
+    
+}
+
+.total-count::after{
+    content: counter(lenteja);/* Muestra la lógica */
+}

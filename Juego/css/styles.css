@@ -1,0 +1,359 @@
+:root{
+    --dark-brown: #a54a38;
+    --light-brown: #bf624c;
+    --dark-green: #51af5e;
+    --light-green: #69de79;
+    --shadow: 0 19px 38px rgba(0,0,0,0.30),
+            0 15px 12px rgba(0,0,0,0.22);
+}
+
+.title {
+    margin: 0;
+    top: 0;
+}
+
+body{
+    counter-reset: lenteja; /*Sirve para contar, se le declara una variable */
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    place-items: center;
+    width: 100%;
+}
+
+input:checked{
+    counter-increment: lenteja; /* Incrementar en 1 la variable creada */
+}
+
+.score::after{
+    content: counter(lenteja);/* Muestra la lógica */
+}
+
+input[type="checkbox"]{
+    height: 50px;
+    width: 80px;
+    cursor: pointer;
+    margin: 0;
+    top: 0;
+    z-index: 2;
+    position: relative;
+    appearance: none;
+}
+
+.phone{
+    background: #CCEFFF;
+    border: 8px solid black;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+@keyframes bunny{
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+.layer-1{
+    /* background:papayawhip; */
+    height: 450px;
+    bottom: 0;
+    position: absolute;
+    left: 60px;
+    width: 80px;
+    z-index: 1;
+    
+    animation-name: bunny;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    
+}
+.layer-2{
+    height: 450px;
+    bottom: 0;
+    position: absolute;
+    right: 60px;
+    width: 80px;
+    z-index: 1;
+
+    animation-name: bunny;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.layer-3{
+    background: var(--light-brown);
+    border-radius: 20px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 220px;
+    position: absolute;
+    z-index: 2;
+}
+
+.lawn{
+    background: var(--dark-green);
+    height: 20px;
+    width: 100%;
+}
+
+.land{
+    background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, var(--light-brown) 25%, transparent 25%),
+                linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%); 
+    background-size: 33px 30px;
+    height: 30px;
+    width: 100%;
+}
+
+.layer-4{
+
+    height: 350px;
+    bottom: 0;
+    position: absolute;
+    left: 30px;
+    width: 80px;
+    z-index: 3;
+
+    animation-name: bunny;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.layer-5{
+    background: var(--light-brown);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 300px;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    position: absolute;
+    z-index: 4;
+}
+
+.layer-6{
+
+    height: 250px;
+    bottom: 0;
+    right: 30px;
+    position: absolute;
+    width: 80px;
+    z-index: 5;
+
+    animation-name: bunny;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.layer-7{
+    background: var(--light-brown);
+    border-radius: 20px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 200px;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 200px;
+    position: absolute;
+    z-index: 6;
+}
+
+.layer-8{
+
+    bottom: 0;
+    height: 120px;
+    left: 0;
+    right:0;
+    margin: 0 auto;
+    position: absolute;
+    width: 200px;
+    z-index: 7;
+}
+
+.layer-8-left-lawn{
+    background: var(--dark-green);
+    width: 80px;
+    height: 70%;
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    left: 0px;
+    position: absolute;
+}
+
+.layer-8-center-lawn{
+    background: var(--dark-green);
+    width: 80px;
+    height: 100%;
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    left: 60px;
+    position: absolute;
+}
+
+.layer-8-right-lawn{
+    background: var(--dark-green);
+    width: 80px;
+    height: 70%;
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    left: 130px;
+    position: absolute;
+}
+
+.layer-9{
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 120px;
+    z-index: 8;
+}
+
+.layer-9__left-cloud{
+    width: 80px;
+    height: 100%;
+    background: white;
+    left: 0;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    display: inline-block;
+}
+.layer-9__right-cloud{
+    width: 40px;
+    height: 60%;
+    background: white;
+    left: 80px;
+    bottom: 0;
+    border-radius: 0 40px 30px 0;
+    position: absolute;
+    display: inline-block;
+}
+
+.layer-10{
+
+    bottom: 0;
+    height: 100px;
+    right: 0;
+    position: absolute;
+    width: 120px;
+    z-index: 9;
+}
+
+.layer-10__left-cloud{
+    width: 80px;
+    height: 100%;
+    background: white;
+    right: 0;
+    border-radius: 40px 40px 0 0;
+    position: absolute;
+    display: inline-block; 
+}
+.layer-10__right-cloud{
+    width: 40px;
+    height: 60%;
+    background: white;
+    right:80px;
+    bottom: 0;
+    border-radius: 40px 0 0 30px;
+    position: absolute;
+    display: inline-block;
+}
+.left__ear--outer{
+    background: white;
+    border-radius: 90%;
+    position: absolute;
+    height: 50px;
+    top: 0;
+    left: 10px;
+    width: 20px;
+}
+.left__ear--inner{
+    background: pink;
+    border-radius: 90%;
+    position: absolute;
+    height: 50px;
+    top: 10px;
+    left: 15px;
+    width: 10px;
+}
+.right__ear--outer{
+    background: white;
+    border-radius: 90%;
+    position: absolute;
+    height: 50px;
+    top: 0;
+    right: 10px;
+    width: 20px;
+}
+.right__ear--inner{
+    background: pink;
+    border-radius: 90%;
+    position: absolute;
+    height: 50px;
+    top: 10px;
+    right: 15px;
+    width: 10px;
+}
+
+.head{
+    background: white;
+    height: 80px;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+}
+
+.head__eye{
+    background:gray;
+    border-radius: 50%;
+    height: 4px;
+    position: absolute;
+    width: 3px;
+    top: 10px;
+    animation-name: garbanzo;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.head__eye--left{
+    left: 30px;
+}
+
+.head__eye--right{
+    right: 30px;
+}
+
+@keyframes garbanzo {
+    0%{
+        height: 4px;
+    }
+    5%{
+        height: 1px;
+        transform: translate(5px, 5px);
+    }
+    10%{
+        height: 4px;
+    }
+}
